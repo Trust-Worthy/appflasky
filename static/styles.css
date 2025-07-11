@@ -41,4 +41,16 @@ body {
   background-color: #B0DB9C;
   color: #2A4759;
   text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.content table a:hover {
+  background-color: #9EC6F3;
+}
+.content input {
+  padding: 10px;
+  margin: 5px;
+  border: solid 1px;
+  border-radius: 10px;
+  background-color: #B0DB9C;
+  font-size: 15px;
 }/*# sourceMappingURL=styles.css.map */
