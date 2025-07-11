@@ -1,7 +1,59 @@
 // Color Variables
 
-$primary_color: #BDDDE4;
+$primary_color: #B0DB9C ;
 $primary-hover-color:#9EC6F3;
-$success-color: #CAE8BD;
+$success-color: #169976;
 $success-hover-color: #B0DB9C;
-$title-color: #9FB3DF;
+$title-color: #CD5656;
+$bg_color: #CAE8BD;
+
+body {
+    font-family:monospace;
+    margin: 0;
+    background-color: $bg_color;
+}
+
+.content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2A4759;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h1 {
+        color: $title-color;
+    }
+
+    h3 {
+        color: #CD5656;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        th{
+            color: #CD5656;
+            font-size: 20px;
+        }
+        td {
+            color: #B0DB9C;
+            border: 1px solid #2A4759;
+            font-size: 15px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 10px;
+            background-color: #B0DB9C;
+            color: #2A4759;
+            text-decoration: none;
+        }
+
+
+    }
+}
