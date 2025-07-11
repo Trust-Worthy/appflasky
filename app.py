@@ -39,15 +39,10 @@ def index():
     
     # 2. See all current tasks 
     else: ### GET request
-        tasks = MyTask.query.order_by()
-    
-    
-    
-    
-    
-    
-    
-    return render_template("index.html")
+        tasks = MyTask.query.order_by(MyTask.created).all()
+        
+
+        return render_template("index.html",tasks=tasks)
 
 
 
