@@ -1,20 +1,58 @@
 # Imports
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from flask_scss import Scss
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import datetime, timezone
 # My app
 app = Flask(__name__)
+Scss(app)
 
+# Configuring database
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+db = SQLAlchemy(app)
 
+# Kinda like a data class ~ row of data
+class MyTask(db.Model):
+    id = db.Column(db.Integer, primary_key=True) # Master key allows to add or delete
+    content = db.Column(db.String(100), nullable=False)
+    complete = db.Column(db.Integer, default=0) # default no not complete
+    created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
-# route for home page
-@app.route("/")
+    def __repr__(self):
+        return f"Task {self.id}"
+
+# Homepage
+@app.route("/",methods=["POST","GET"])
 def index():
+    # 1. Add a Task
+    
+    
+    
+    # 2. See all current tasks 
+    
+    
+    
+    
+    
+    
+    
+    
     return render_template("index.html")
 
 
 
 
+
+
+
+
+
+
+
+
+
 if __name__ in "__main__":
+    with app.app_context():
+        db.create_all()
+        
     app.run(debug=True)
