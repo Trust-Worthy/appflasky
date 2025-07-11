@@ -9,6 +9,7 @@ Scss(app)
 
 # Configuring database
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 db = SQLAlchemy(app)
 
 # Kinda like a data class ~ row of data
@@ -21,6 +22,9 @@ class MyTask(db.Model):
     def __repr__(self):
         return f"Task {self.id}"
 
+### create new database via context manager 
+with app.app_context():
+        db.create_all()
 # Homepage
 @app.route("/",methods=["POST","GET"])
 def index():
@@ -74,7 +78,6 @@ def edit(id:int):
     
     
 if __name__ in "__main__":
-    with app.app_context():
-        db.create_all()
+    
         
     app.run(debug=True)

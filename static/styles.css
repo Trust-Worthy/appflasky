@@ -53,4 +53,11 @@ body {
   border-radius: 10px;
   background-color: #B0DB9C;
   font-size: 15px;
+}
+.content #btn_add {
+  background-color: #169976;
+  cursor: pointer;
+}
+.content #btn_add:hover {
+  background-color: #9EC6F3;
 }/*# sourceMappingURL=styles.css.map */

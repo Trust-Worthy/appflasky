@@ -70,4 +70,12 @@ body {
         background-color: #B0DB9C;
         font-size: 15px;
     }
+
+    #btn_add {
+        background-color: $success-color;
+        cursor: pointer;
+        &:hover {
+            background-color: $primary-hover-color;
+        }
+    }
 }
