@@ -70,7 +70,7 @@ def edit(id:int):
             print("ERROR: Delete{e}")
             return f"ERROR: Delete{e}"
     else:
-        return "HOME"
+        return render_template('edit.html',task=task)
     
     
 if __name__ in "__main__":
