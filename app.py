@@ -25,11 +25,21 @@ class MyTask(db.Model):
 @app.route("/",methods=["POST","GET"])
 def index():
     # 1. Add a Task
-    
-    
+    if request.method == "POST":
+        current_task = request.form['content'] ## form on index.html content is that id
+        new_task = MyTask(content=current_task)
+        
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect("/")
+        except Exception as e:
+            print("ERROR:{e}")
+            return f"ERROR:{e}"
     
     # 2. See all current tasks 
-    
+    else: ### GET request
+        tasks = MyTask.query.order_by()
     
     
     
